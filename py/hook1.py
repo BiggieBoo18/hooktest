@@ -48,7 +48,7 @@ if not kernel32.DebugActiveProcess(pid):
     show_error(h_process=h_process)
 
 sw_bps      = {}
-address     = func_resolve("msvcrt.dll", b"wprintf")
+address     = func_resolve("kernel32.dll", b"WriteFile")
 debug_event = DEBUG_EVENT()
 first_break = False # windows break
 counter     = 0
